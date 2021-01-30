@@ -39,3 +39,8 @@
 yarn-debug.log*
 .yarn-integrity
 
+*.jpg
+public/system/movies/images/000/000/008/original/ironman_2.webp
+public/system/movies/images/000/000/008/medium/ironman_2.webp
+public/ironman_2.webp
+public/CaptainA.jpeg
