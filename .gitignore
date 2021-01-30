@@ -31,3 +31,12 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+db/migrate/20210129231639_create_action_mailbox_tables.action_mailbox.rb
+*.rb
