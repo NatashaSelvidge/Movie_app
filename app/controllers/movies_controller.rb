@@ -3,6 +3,13 @@ class MoviesController < ApplicationController
 
   before_action :set_movie, only: %i[ show edit update destroy ]
 
+  def search 
+    if params[:search].present?
+    @movies = Movie.search(params[:search])
+  else
+    @movies = Movie.all 
+  end 
+end 
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
@@ -10,7 +17,14 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    @reviews = Review.where(movie_id:@movie.id).order("created_at DESC")
+
+    if @review.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
   end
+end 
 
   # GET /movies/new
   def new
@@ -68,4 +82,6 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :description, :movie_length, :director, :rating, :image)
     end
+
+
 end

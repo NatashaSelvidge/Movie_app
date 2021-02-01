@@ -12,4 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
 //= require bootstrap-sprockets
+//= require jquery.raty
